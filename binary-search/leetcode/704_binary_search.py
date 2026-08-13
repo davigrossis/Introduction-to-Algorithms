@@ -10,8 +10,6 @@
 # Input: nums = [-1,0,3,5,9,12], target = 2
 # Output: -1
 # Explanation: 2 does not exist in nums so return -1
- 
-
 # Constraints:
 
 # 1 <= nums.length <= 104
@@ -19,13 +17,22 @@
 # All the integers in nums are unique.
 # nums is sorted in ascending order.
 
-class Solution(object):
-    def search(self, nums, target):
 
-        
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: int
-        """
-        
+def binary_search(nums, target):
+    low = 0
+    high = len(nums) - 1 
+
+    while(low <= high):
+        mid = (low + high) // 2
+        guess = nums[mid]
+        if guess == target:
+            return mid
+        if guess < target:
+            low = mid + 1
+        if guess > target:
+            high = mid - 1
+    return -1
+
+lista = [-1,0,3,5,9,12]
+print(binary_search(lista, 9))
+print(binary_search(lista, 2))
