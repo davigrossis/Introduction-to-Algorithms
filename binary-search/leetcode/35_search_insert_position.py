@@ -24,7 +24,7 @@ def searchInsert(nums, target):
     alto = len(nums) - 1
     baixo = 0
     print("tamanho:", len(nums))
-    while baixo <= alto:
+    while baixo <= alto
         meio = (alto + baixo) // 2
         chute = nums[meio]
         if chute == target:
